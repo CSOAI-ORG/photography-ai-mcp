@@ -27,6 +27,21 @@ def _check_rate_limit(tool_name: str) -> None:
     _call_counts[tool_name].append(now)
 
 
+# Path traversal protection
+BLOCKED_PATH_PATTERNS = ["/etc/", "/var/", "/proc/", "/sys/", "/dev/", ".."]
+
+
+def _validate_file_path(file_path: str) -> str | None:
+    """Validate file path against traversal attacks. Returns error message or None."""
+    for pattern in BLOCKED_PATH_PATTERNS:
+        if pattern in file_path:
+            return f"Access denied: path contains blocked pattern '{pattern}'"
+    real = os.path.realpath(file_path)
+    if not os.path.isfile(real):
+        return f"File not found: {file_path}"
+    return None
+
+
 @mcp.tool()
 def analyze_exif(
     file_path: str,
@@ -37,6 +52,10 @@ def analyze_exif(
         file_path: Absolute path to the image file
     """
     _check_rate_limit("analyze_exif")
+
+    path_err = _validate_file_path(file_path)
+    if path_err:
+        return {"error": path_err}
 
     if not os.path.exists(file_path):
         return {"error": f"File not found: {file_path}"}
