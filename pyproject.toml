@@ -1,0 +1,21 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "photography-ai-mcp"
+version = "1.0.0"
+description = "Photo management tools - EXIF analysis, location mapping, duplicate detection, color palettes, metadata editing"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    { name = "MEOK AI Labs", email = "hello@meok.ai" },
+]
+keywords = ["mcp", "ai", "tools", "photography"]
+dependencies = [
+    "mcp>=1.0.0",
+]
+
+[project.scripts]
+photography-ai-mcp = "server:mcp.run"
