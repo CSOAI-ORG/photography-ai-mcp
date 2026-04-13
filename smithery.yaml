@@ -1,0 +1,10 @@
+name: photography-ai-mcp
+description: "MEOK AI Labs — Photo management and analysis tools powered by MEOK AI Labs."
+vendor: MEOK AI Labs
+homepage: https://meok.ai
+repository: https://github.com/CSOAI-ORG/photography-ai-mcp
+license: MIT
+categories: [Photography, Creative]
+tags: [photography, photo-editing, camera-settings, image-processing, visual-arts]
+runtime: python
+entrypoint: server.py

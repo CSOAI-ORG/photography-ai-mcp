@@ -5,17 +5,25 @@ build-backend = "hatchling.build"
 [project]
 name = "photography-ai-mcp"
 version = "1.0.0"
-description = "Photo management tools - EXIF analysis, location mapping, duplicate detection, color palettes, metadata editing"
+description = "MEOK AI Labs — Photo management and analysis tools powered by MEOK AI Labs."
+authors = [{name="MEOK AI Labs", email="nicholas@meok.ai"}]
 readme = "README.md"
-license = "MIT"
+license = {text = "MIT"}
 requires-python = ">=3.10"
-authors = [
-    { name = "MEOK AI Labs", email = "hello@meok.ai" },
+keywords = ["mcp", "mcp-server", "model-context-protocol", "claude", "ai-tools", "meok-ai-labs", "photography", "photo-editing", "camera-settings", "image-processing", "visual-arts"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Intended Audience :: Developers",
 ]
-keywords = ["mcp", "ai", "tools", "photography"]
 dependencies = [
     "mcp>=1.0.0",
 ]
 
-[project.scripts]
-photography-ai-mcp = "server:mcp.run"
+[project.urls]
+Homepage = "https://meok.ai"
+Repository = "https://github.com/CSOAI-ORG/photography-ai-mcp"
+Documentation = "https://meok.ai/docs/photography-ai-mcp"
+"Bug Tracker" = "https://github.com/CSOAI-ORG/photography-ai-mcp/issues"
