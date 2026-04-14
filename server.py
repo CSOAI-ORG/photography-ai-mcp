@@ -44,8 +44,7 @@ def _validate_file_path(file_path: str) -> str | None:
 
 @mcp.tool()
 def analyze_exif(
-    file_path: str,
-) -> dict:
+    file_path: str) -> dict:
     """Analyze EXIF metadata from an image file (JPEG).
 
     Args:
@@ -139,8 +138,7 @@ def analyze_exif(
 
 @mcp.tool()
 def map_photo_locations(
-    photos: list[dict],
-) -> dict:
+    photos: list[dict]) -> dict:
     """Map and cluster photo locations from GPS coordinates.
 
     Args:
@@ -197,8 +195,7 @@ def map_photo_locations(
     for i in range(len(sorted_photos) - 1):
         total_distance += _haversine_km(
             float(sorted_photos[i]["latitude"]), float(sorted_photos[i]["longitude"]),
-            float(sorted_photos[i + 1]["latitude"]), float(sorted_photos[i + 1]["longitude"]),
-        )
+            float(sorted_photos[i + 1]["latitude"]), float(sorted_photos[i + 1]["longitude"]))
 
     # Bounding box
     lats = [float(p["latitude"]) for p in photos if float(p.get("latitude", 0)) != 0]
@@ -229,8 +226,7 @@ def _haversine_km(lat1, lon1, lat2, lon2):
 @mcp.tool()
 def find_duplicates(
     files: list[dict],
-    method: str = "hash",
-) -> dict:
+    method: str = "hash") -> dict:
     """Find duplicate photos using file hash or metadata comparison.
 
     Args:
@@ -324,8 +320,7 @@ def find_duplicates(
 @mcp.tool()
 def extract_color_palette(
     colors: list[dict],
-    palette_size: int = 6,
-) -> dict:
+    palette_size: int = 6) -> dict:
     """Extract and analyze a color palette from image color data.
 
     Args:
@@ -437,8 +432,7 @@ def _rgb_to_hsl(r, g, b):
 def edit_metadata(
     file_path: str,
     updates: dict,
-    dry_run: bool = True,
-) -> dict:
+    dry_run: bool = True) -> dict:
     """Plan metadata edits for a photo file (generates edit commands).
 
     Args:
