@@ -3,6 +3,11 @@ Photography AI MCP Server
 Photo management and analysis tools powered by MEOK AI Labs.
 """
 
+
+import sys, os
+sys.path.insert(0, os.path.expanduser('~/clawd/meok-labs-engine/shared'))
+from auth_middleware import check_access
+
 import time
 import os
 import struct
@@ -44,12 +49,16 @@ def _validate_file_path(file_path: str) -> str | None:
 
 @mcp.tool()
 def analyze_exif(
-    file_path: str) -> dict:
+    file_path: str, api_key: str = "") -> dict:
     """Analyze EXIF metadata from an image file (JPEG).
 
     Args:
         file_path: Absolute path to the image file
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     _check_rate_limit("analyze_exif")
 
     path_err = _validate_file_path(file_path)
@@ -138,12 +147,16 @@ def analyze_exif(
 
 @mcp.tool()
 def map_photo_locations(
-    photos: list[dict]) -> dict:
+    photos: list[dict], api_key: str = "") -> dict:
     """Map and cluster photo locations from GPS coordinates.
 
     Args:
         photos: List of dicts with keys: name, latitude, longitude, date (optional)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     _check_rate_limit("map_photo_locations")
 
     if not photos:
@@ -226,13 +239,17 @@ def _haversine_km(lat1, lon1, lat2, lon2):
 @mcp.tool()
 def find_duplicates(
     files: list[dict],
-    method: str = "hash") -> dict:
+    method: str = "hash", api_key: str = "") -> dict:
     """Find duplicate photos using file hash or metadata comparison.
 
     Args:
         files: List of dicts with keys: path, size_bytes (optional), date (optional), dimensions (optional, e.g. "4000x3000")
         method: Detection method: hash (file content), metadata (size+date+dimensions), fuzzy (size within 5%)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     _check_rate_limit("find_duplicates")
 
     duplicates = []
@@ -320,13 +337,17 @@ def find_duplicates(
 @mcp.tool()
 def extract_color_palette(
     colors: list[dict],
-    palette_size: int = 6) -> dict:
+    palette_size: int = 6, api_key: str = "") -> dict:
     """Extract and analyze a color palette from image color data.
 
     Args:
         colors: List of dicts with keys: r, g, b (0-255), count (optional, pixel count)
         palette_size: Number of dominant colors to return
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     _check_rate_limit("extract_color_palette")
 
     if not colors:
@@ -432,7 +453,7 @@ def _rgb_to_hsl(r, g, b):
 def edit_metadata(
     file_path: str,
     updates: dict,
-    dry_run: bool = True) -> dict:
+    dry_run: bool = True, api_key: str = "") -> dict:
     """Plan metadata edits for a photo file (generates edit commands).
 
     Args:
@@ -440,6 +461,10 @@ def edit_metadata(
         updates: Dict of metadata fields to update: title, description, copyright, artist, rating (1-5), keywords (list)
         dry_run: If True, only show what would change (default: True for safety)
     """
+    allowed, msg, tier = check_access(api_key)
+    if not allowed:
+        return {"error": msg, "upgrade_url": "https://meok.ai/pricing"}
+
     _check_rate_limit("edit_metadata")
 
     valid_fields = {"title", "description", "copyright", "artist", "rating", "keywords", "date_taken", "gps_lat", "gps_lon"}

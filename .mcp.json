@@ -1,24 +1,104 @@
 {
   "name": "photography-ai-mcp",
-  "description": "MEOK AI Labs \u2014 Photo management and analysis tools powered by MEOK AI Labs.",
-  "vendor": "MEOK AI Labs",
-  "homepage": "https://meok.ai",
-  "repository": "https://github.com/CSOAI-ORG/photography-ai-mcp",
-  "runtime": "python",
-  "entrypoint": "server.py",
+  "description": "> Photo management tools - EXIF analysis, location mapping, duplicate detection, color palettes, metadata editing",
+  "version": "1.0.0",
   "tools": [
-    "analyze_exif",
-    "map_photo_locations",
-    "find_duplicates",
-    "extract_color_palette",
-    "edit_metadata"
-  ],
-  "categories": [
-    "Photography",
-    "Creative"
-  ],
-  "pricing": {
-    "free": "50 calls/day",
-    "pro": "$9/mo"
-  }
+    {
+      "name": "analyze_exif",
+      "description": "Analyze EXIF metadata from an image file (JPEG).",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "file_path": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "file_path"
+        ]
+      }
+    },
+    {
+      "name": "map_photo_locations",
+      "description": "Map and cluster photo locations from GPS coordinates.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "photos": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          }
+        },
+        "required": [
+          "photos"
+        ]
+      }
+    },
+    {
+      "name": "find_duplicates",
+      "description": "Find duplicate photos using file hash or metadata comparison.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "files": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "method": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "files"
+        ]
+      }
+    },
+    {
+      "name": "extract_color_palette",
+      "description": "Extract and analyze a color palette from image color data.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "colors": {
+            "type": "array",
+            "items": {
+              "type": "object"
+            }
+          },
+          "palette_size": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "colors"
+        ]
+      }
+    },
+    {
+      "name": "edit_metadata",
+      "description": "Plan metadata edits for a photo file (generates edit commands).",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "file_path": {
+            "type": "string"
+          },
+          "updates": {
+            "type": "object"
+          },
+          "dry_run": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "file_path",
+          "updates"
+        ]
+      }
+    }
+  ]
 }

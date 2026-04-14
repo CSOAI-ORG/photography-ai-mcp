@@ -1,10 +1,47 @@
 name: photography-ai-mcp
-description: "MEOK AI Labs — Photo management and analysis tools powered by MEOK AI Labs."
-vendor: MEOK AI Labs
-homepage: https://meok.ai
-repository: https://github.com/CSOAI-ORG/photography-ai-mcp
-license: MIT
-categories: [Photography, Creative]
-tags: [photography, photo-editing, camera-settings, image-processing, visual-arts]
-runtime: python
-entrypoint: server.py
+description: '> Photo management tools - EXIF analysis, location mapping, duplicate
+  detection, color palettes, metadata editing'
+version: 1.0.0
+tools:
+- name: analyze_exif
+  description: Analyze EXIF metadata from an image file (JPEG).
+  parameters:
+  - name: file_path
+    type: string
+    required: true
+- name: map_photo_locations
+  description: Map and cluster photo locations from GPS coordinates.
+  parameters:
+  - name: photos
+    type: array
+    required: true
+- name: find_duplicates
+  description: Find duplicate photos using file hash or metadata comparison.
+  parameters:
+  - name: files
+    type: array
+    required: true
+  - name: method
+    type: string
+    required: false
+- name: extract_color_palette
+  description: Extract and analyze a color palette from image color data.
+  parameters:
+  - name: colors
+    type: array
+    required: true
+  - name: palette_size
+    type: integer
+    required: false
+- name: edit_metadata
+  description: Plan metadata edits for a photo file (generates edit commands).
+  parameters:
+  - name: file_path
+    type: string
+    required: true
+  - name: updates
+    type: object
+    required: true
+  - name: dry_run
+    type: boolean
+    required: false
