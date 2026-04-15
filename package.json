@@ -1,7 +1,7 @@
 {
   "name": "photography-ai-mcp",
   "version": "1.0.0",
-  "description": "MEOK AI Labs — photography MCP Server",
+  "description": "Photography Ai automation via MCP. Includes analyze exif, map photo locations, find duplicates. By MEOK AI Labs.",
   "main": "server.py",
   "mcp": {
     "name": "photography",
@@ -9,10 +9,22 @@
     "homepage": "https://meok.ai",
     "repository": "https://github.com/CSOAI-ORG/photography-ai-mcp",
     "runtime": "python",
-    "tags": ["mcp", "mcp-server", "meok-ai-labs", "ai-tools"]
+    "tags": [
+      "mcp",
+      "mcp-server",
+      "meok-ai-labs",
+      "ai-tools"
+    ]
   },
-  "keywords": ["mcp", "mcp-server", "meok-ai-labs"],
+  "keywords": [
+    "mcp",
+    "mcp-server",
+    "meok-ai-labs"
+  ],
   "author": "MEOK AI Labs <nicholas@meok.ai>",
   "license": "MIT",
-  "repository": {"type": "git", "url": "https://github.com/CSOAI-ORG/photography-ai-mcp"}
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CSOAI-ORG/photography-ai-mcp"
+  }
 }

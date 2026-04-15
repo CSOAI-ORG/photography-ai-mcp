@@ -1,5 +1,6 @@
 name: photography-ai-mcp
-description: MEOK AI Labs MCP Server
+description: Photography Ai automation via MCP. Includes analyze exif, map photo locations,
+  find duplicates. By MEOK AI Labs.
 version: 1.0.0
 tools:
 - name: analyze_exif

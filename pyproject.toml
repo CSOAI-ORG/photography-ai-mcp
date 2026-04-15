@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 [project]
 name = "photography-ai-mcp"
 version = "1.0.0"
-description = "MEOK AI Labs — photography-ai-mcp"
+description = "Photography Ai automation via MCP. Includes analyze exif, map photo locations, find duplicates. By MEOK AI Labs."
 license = {file = "LICENSE"}
 requires-python = ">=3.10"
 authors = [{name = "MEOK AI Labs", email = "nicholas@meok.ai"}]
