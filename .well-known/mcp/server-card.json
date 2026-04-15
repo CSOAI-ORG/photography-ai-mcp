@@ -1,0 +1,57 @@
+{
+  "name": "photography-ai",
+  "description": "Photography Ai tools powered by MEOK AI Labs.",
+  "version": "1.0.0",
+  "protocol_version": "2025-11-25",
+  "publisher": {
+    "name": "MEOK AI Labs",
+    "url": "https://meok.ai",
+    "email": "nicholas@meok.ai"
+  },
+  "repository": "https://github.com/CSOAI-ORG/photography-ai-mcp",
+  "license": "MIT",
+  "transport": [
+    "stdio",
+    "streamable-http"
+  ],
+  "authentication": {
+    "type": "api-key",
+    "free_tier": true,
+    "free_limit": "15 calls/day"
+  },
+  "tools": [
+    {
+      "name": "analyze_exif",
+      "description": "Analyze EXIF metadata from an image file (JPEG)."
+    },
+    {
+      "name": "map_photo_locations",
+      "description": "Map and cluster photo locations from GPS coordinates."
+    },
+    {
+      "name": "find_duplicates",
+      "description": "Find duplicate photos using file hash or metadata comparison."
+    },
+    {
+      "name": "extract_color_palette",
+      "description": "Extract and analyze a color palette from image color data."
+    },
+    {
+      "name": "edit_metadata",
+      "description": "Plan metadata edits for a photo file (generates edit commands)."
+    }
+  ],
+  "categories": [
+    "AI & Machine Learning",
+    "Content & Media"
+  ],
+  "pricing": {
+    "free": {
+      "calls_per_day": 15
+    },
+    "pro": {
+      "price": "$29/month",
+      "url": "https://meok.ai/pricing"
+    }
+  }
+}
