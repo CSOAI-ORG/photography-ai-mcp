@@ -1,6 +1,5 @@
 name: photography-ai-mcp
-description: '> Photo management tools - EXIF analysis, location mapping, duplicate
-  detection, color palettes, metadata editing'
+description: MEOK AI Labs MCP Server
 version: 1.0.0
 tools:
 - name: analyze_exif

@@ -1,6 +1,6 @@
 {
   "name": "photography-ai-mcp",
-  "description": "> Photo management tools - EXIF analysis, location mapping, duplicate detection, color palettes, metadata editing",
+  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Sovereign AI tools for everyone.",
   "version": "1.0.0",
   "tools": [
     {
@@ -25,10 +25,7 @@
         "type": "object",
         "properties": {
           "photos": {
-            "type": "array",
-            "items": {
-              "type": "object"
-            }
+            "type": "array"
           }
         },
         "required": [
@@ -43,10 +40,7 @@
         "type": "object",
         "properties": {
           "files": {
-            "type": "array",
-            "items": {
-              "type": "object"
-            }
+            "type": "array"
           },
           "method": {
             "type": "string"
@@ -64,10 +58,7 @@
         "type": "object",
         "properties": {
           "colors": {
-            "type": "array",
-            "items": {
-              "type": "object"
-            }
+            "type": "array"
           },
           "palette_size": {
             "type": "integer"

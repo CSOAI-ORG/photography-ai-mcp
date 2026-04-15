@@ -17,7 +17,7 @@ from datetime import datetime
 from collections import defaultdict, Counter
 from mcp.server.fastmcp import FastMCP
 
-mcp = FastMCP("photography-ai-mcp")
+mcp = FastMCP("photography-ai", instructions="MEOK AI Labs MCP Server")
 
 _call_counts: dict[str, list[float]] = defaultdict(list)
 FREE_TIER_LIMIT = 30
