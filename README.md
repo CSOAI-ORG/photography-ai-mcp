@@ -1,56 +1,38 @@
-# Photography AI MCP
+<div align="center">
 
-> Photo management tools - EXIF analysis, location mapping, duplicate detection, color palettes, metadata editing
+[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/photography-ai-mcp)](https://github.com/CSOAI-ORG/photography-ai-mcp/stargazers)
 
-Built by **MEOK AI Labs** | [meok.ai](https://meok.ai)
+# uphotographyU aiU mcp
 
-## Features
+**Built by **MEOK AI Labs** | [meok.ai](https://meok.ai)**
 
-| Tool | Description |
-|------|-------------|
-| `analyze_exif` | See tool docstring for details |
-| `map_photo_locations` | See tool docstring for details |
-| `find_duplicates` | See tool docstring for details |
-| `extract_color_palette` | See tool docstring for details |
-| `edit_metadata` | See tool docstring for details |
+[![npm version](https://img.shields.io/npm/v/@meok-ai/photography-ai-mcp)](https://www.npmjs.com/package/@meok-ai/photography-ai-mcp)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-255+_servers-purple)](https://meok.ai)
+
+[Installation](#installation) · [Docs](https://csoai.org) · [Report Bug](https://github.com/CSOAI-ORG/photography-ai-mcp/issues)
+
+</div>
+
+---
 
 ## Installation
 
 ```bash
-pip install mcp
+pip install photography-ai-mcp
+# or
+npm install -g @meok-ai/photography-ai-mcp
 ```
 
-## Usage
+## Quick Start
 
-### As an MCP Server
+See the project repository for full documentation and examples.
 
-```bash
-python server.py
-```
+## Enterprise Support
 
-### Claude Desktop Configuration
-
-Add to your `claude_desktop_config.json`:
-
-```json
-{
-  "mcpServers": {
-    "photography-ai-mcp": {
-      "command": "python",
-      "args": ["/path/to/photography-ai-mcp/server.py"]
-    }
-  }
-}
-```
-
-## Rate Limits
-
-Free tier includes **30-50 calls per tool per day**. Upgrade at [meok.ai/pricing](https://meok.ai/pricing) for unlimited access.
+- 📧 nicholas@csoai.org
+- 🌐 [CSOAI.org](https://csoai.org)
 
 ## License
 
-MIT License - see [LICENSE](LICENSE) for details.
-
----
-
-Built with FastMCP by MEOK AI Labs
+MIT © [CSOAI](https://csoai.org)
