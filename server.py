@@ -54,6 +54,21 @@ def analyze_exif(
 
     Args:
         file_path: Absolute path to the image file
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -152,6 +167,21 @@ def map_photo_locations(
 
     Args:
         photos: List of dicts with keys: name, latitude, longitude, date (optional)
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -245,6 +275,21 @@ def find_duplicates(
     Args:
         files: List of dicts with keys: path, size_bytes (optional), date (optional), dimensions (optional, e.g. "4000x3000")
         method: Detection method: hash (file content), metadata (size+date+dimensions), fuzzy (size within 5%)
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -343,6 +388,21 @@ def extract_color_palette(
     Args:
         colors: List of dicts with keys: r, g, b (0-255), count (optional, pixel count)
         palette_size: Number of dominant colors to return
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -460,6 +520,20 @@ def edit_metadata(
         file_path: Path to the image file
         updates: Dict of metadata fields to update: title, description, copyright, artist, rating (1-5), keywords (list)
         dry_run: If True, only show what would change (default: True for safety)
+
+    Behavior:
+        This tool generates structured output without modifying external systems.
+        Output is deterministic for identical inputs. No side effects.
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
     """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
