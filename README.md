@@ -1,45 +1,60 @@
-[![photography-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/photography-ai-mcp/badges/score.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/photography-ai-mcp)
-[![MCP Registry](https://img.shields.io/badge/MCP_Registry-Published-green)](https://registry.modelcontextprotocol.io)
-[![PyPI](https://img.shields.io/pypi/v/photography-ai-mcp)](https://pypi.org/project/photography-ai-mcp/)
-
-[![photography-ai-mcp MCP server](https://glama.ai/mcp/servers/CSOAI-ORG/photography-ai-mcp/badges/card.svg)](https://glama.ai/mcp/servers/CSOAI-ORG/photography-ai-mcp)
-
 <div align="center">
 
-[![GitHub stars](https://img.shields.io/github/stars/CSOAI-ORG/photography-ai-mcp)](https://github.com/CSOAI-ORG/photography-ai-mcp/stargazers)
+# Photography Ai MCP
 
-# uphotographyU aiU mcp
+**Photography AI MCP Server**
 
-**Built by **MEOK AI Labs** | [meok.ai](https://meok.ai)**
-
-[![npm version](https://img.shields.io/npm/v/@meok-ai/photography-ai-mcp)](https://www.npmjs.com/package/@meok-ai/photography-ai-mcp)
+[![PyPI](https://img.shields.io/pypi/v/meok-photography-ai-mcp)](https://pypi.org/project/meok-photography-ai-mcp/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-255+_servers-purple)](https://meok.ai)
-
-[Installation](#installation) · [Docs](https://csoai.org) · [Report Bug](https://github.com/CSOAI-ORG/photography-ai-mcp/issues)
+[![MEOK AI Labs](https://img.shields.io/badge/MEOK_AI_Labs-MCP_Server-purple)](https://meok.ai)
 
 </div>
 
----
+## Overview
+
+Photography AI MCP Server
+Photo management and analysis tools powered by MEOK AI Labs.
+
+## Tools
+
+| Tool | Description |
+|------|-------------|
+| `analyze_exif` | Analyze EXIF metadata from an image file (JPEG). |
+| `map_photo_locations` | Map and cluster photo locations from GPS coordinates. |
+| `find_duplicates` | Find duplicate photos using file hash or metadata comparison. |
+| `extract_color_palette` | Extract and analyze a color palette from image color data. |
+| `edit_metadata` | Plan metadata edits for a photo file (generates edit commands). |
 
 ## Installation
 
 ```bash
-pip install photography-ai-mcp
-# or
-npm install -g @meok-ai/photography-ai-mcp
+pip install meok-photography-ai-mcp
 ```
 
-## Quick Start
+## Usage with Claude Desktop
 
-See the project repository for full documentation and examples.
+Add to your Claude Desktop MCP config (`claude_desktop_config.json`):
 
-## Enterprise Support
+```json
+{
+  "mcpServers": {
+    "photography-ai": {
+      "command": "python",
+      "args": ["-m", "meok_photography_ai_mcp.server"]
+    }
+  }
+}
+```
 
-- 📧 nicholas@csoai.org
-- 🌐 [CSOAI.org](https://csoai.org)
+## Usage with FastMCP
+
+```python
+from mcp.server.fastmcp import FastMCP
+
+# This server exposes 5 tool(s) via MCP
+# See server.py for full implementation
+```
 
 ## License
 
-MIT © [CSOAI](https://csoai.org)
-<!-- mcp-name: io.github.CSOAI-ORG/photography-ai-mcp -->
+MIT © [MEOK AI Labs](https://meok.ai)
