@@ -1,0 +1,23 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "photography-ai-mcp",
+    "description": "Photography Ai MCP Server by MEOK AI Labs",
+    "version": "1.0.6",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "photography-ai-mcp"
+      }
+    ],
+    "capabilities": [
+      "analyze_exif",
+      "map_photo_locations",
+      "find_duplicates",
+      "extract_color_palette",
+      "edit_metadata"
+    ]
+  }
+}

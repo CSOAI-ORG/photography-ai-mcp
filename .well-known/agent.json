@@ -1,0 +1,68 @@
+{
+  "name": "photography-ai-mcp",
+  "description": "Photography Ai MCP Server by MEOK AI Labs",
+  "url": "https://proofof.ai/scorecard/photography-ai-mcp.html",
+  "version": "1.0.6",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "analyze_exif",
+      "name": "Analyze Exif",
+      "description": "analyze_exif via photography-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "map_photo_locations",
+      "name": "Map Photo Locations",
+      "description": "map_photo_locations via photography-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "find_duplicates",
+      "name": "Find Duplicates",
+      "description": "find_duplicates via photography-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "extract_color_palette",
+      "name": "Extract Color Palette",
+      "description": "extract_color_palette via photography-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "edit_metadata",
+      "name": "Edit Metadata",
+      "description": "edit_metadata via photography-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}
