@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 [project]
 name = "photography-ai-mcp"
-version = "1.0.4"
+version = "1.0.6"
 readme = "README.md"
 description = "Photography Ai automation via MCP. Includes analyze exif, map photo locations, find duplicates. By MEOK AI Labs."
 license = {file = "LICENSE"}
@@ -22,7 +22,7 @@ Homepage = "https://meok.ai"
 Repository = "https://github.com/CSOAI-ORG/photography-ai-mcp"
 [tool.hatch.build.targets.wheel]
 packages = ["."]
-only-include = ["server.py"]
+only-include = ["server.py", "auth_middleware.py"]
 
 [project.scripts]
 photography_ai_mcp = "server:main"

@@ -1,0 +1,9 @@
+# photography-ai-mcp - Auto-trigger Rules
+
+When the user asks about photography, use photography-ai-mcp tools: analyze_exif, map_photo_locations, find_duplicates, extract_color_palette, edit_metadata
+
+Photo management and analysis tools powered by MEOK AI Labs.
+
+Install: `pip install photography-ai-mcp`
+
+By MEOK AI Labs — MIT licensed.

@@ -1,0 +1,36 @@
+# photography-ai-mcp
+# Photo management and analysis tools powered by MEOK AI Labs.
+
+## Install
+```bash
+pip install photography-ai-mcp
+```
+
+## Auth & Rate Limits
+- Free tier: 10 calls/day. No API key required.
+- Pro tier (£79/mo): unlimited + signed attestations.
+- Enterprise (£1,499/mo): white-label.
+
+## Tools
+
+### `analyze_exif`
+Analyze EXIF metadata from an image file (JPEG).
+
+### `map_photo_locations`
+Map and cluster photo locations from GPS coordinates.
+
+### `find_duplicates`
+Find duplicate photos using file hash or metadata comparison.
+
+### `extract_color_palette`
+Extract and analyze a color palette from image color data.
+
+### `edit_metadata`
+Plan metadata edits for a photo file (generates edit commands).
+
+
+## Maintainer
+MEOK AI Labs · hello@meok.ai · https://meok.ai · MIT licensed
+
+## Pairs with
+Governance moat: pair this tool with any of MEOK's 38 governance MCPs (EU AI Act, DORA, NIS2, CRA, GDPR, ISO 42001, etc.) for full compliance coverage.

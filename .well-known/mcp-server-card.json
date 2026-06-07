@@ -1,0 +1,28 @@
+{
+  "name": "photography-ai-mcp",
+  "title": "Photography Ai Mcp",
+  "description": "Photography Ai automation via MCP. Includes analyze exif, map photo locations, find duplicates. By MEOK AI Labs.",
+  "version": "1.0.6",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "analyze_exif"
+    },
+    {
+      "name": "map_photo_locations"
+    },
+    {
+      "name": "find_duplicates"
+    },
+    {
+      "name": "extract_color_palette"
+    },
+    {
+      "name": "edit_metadata"
+    }
+  ]
+}
