@@ -4,9 +4,8 @@
   "version": "1.0.7",
   "description": "Photography Ai MCP Server by MEOK AI Labs",
   "repository": {
-    "type": "git",
     "url": "https://github.com/CSOAI-ORG/photography-ai-mcp",
-    "source": "https://github.com/CSOAI-ORG/photography-ai-mcp"
+    "source": "github"
   },
   "packages": [
     {
