@@ -1,4 +1,6 @@
 """
+Buy Pro: https://www.csoai.org/checkout
+
 Photography AI MCP Server
 Photo management and analysis tools powered by MEOK AI Labs.
 """
