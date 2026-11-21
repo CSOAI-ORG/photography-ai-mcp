@@ -9,7 +9,7 @@ description = "Photography Ai automation via MCP. Includes analyze exif, map pho
 license = {file = "LICENSE"}
 requires-python = ">=3.10"
 authors = [{name = "MEOK AI Labs", email = "nicholas@meok.ai"}]
-dependencies = ["mcp>=1.0.0"]
+dependencies = ["mcp>=2.0.0"]
 keywords = ["mcp", "ai", "meok", "photography"]
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -22,7 +22,7 @@ Homepage = "https://meok.ai"
 Repository = "https://github.com/CSOAI-ORG/photography-ai-mcp"
 [tool.hatch.build.targets.wheel]
 packages = ["."]
-only-include = ["server.py", "auth_middleware.py"]
+only-include = ["server.py", "auth_middleware.py", "mcp2026_shim.py"]
 
 [project.scripts]
 photography_ai_mcp = "server:main"
